@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import Header from "../components/Header"
 import Logo from "../components/Logo"
+import Slogan from "../components/Slogan"
+import Button from "../components/Button"
 
 const ContainerWrapper = styled.div`
   background: black;
-  color: red;
   height: 100vh;
   width: 100%;
   display: grid;
@@ -19,7 +20,8 @@ const Container = styled.div`
 
 const Content = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `
 
 export default () => (
@@ -28,6 +30,8 @@ export default () => (
       <Header />
       <Content>
         <Logo width="600px" />
+        <Slogan text="Dont worry, You are in good hands." />
+        <Button text="Check out our " highlightText="projects" />
       </Content>
     </Container>
   </ContainerWrapper>
