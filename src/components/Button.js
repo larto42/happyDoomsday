@@ -30,7 +30,7 @@ const Rectangle = styled.div`
 
 const ButtonWrapper = styled.div`
   position: relative;
-  margin: 40px 0;
+  margin: 20px 0;
   z-index: 0;
   &:hover {
     background: gray;
@@ -49,7 +49,7 @@ const ButtonWrapper = styled.div`
     transform: translateX(70px);
   }
   &:hover ${Button} {
-    transform: scale(1.05);
+    transform: scale(1.015);
   }
 `
 
