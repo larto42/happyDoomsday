@@ -1,15 +1,34 @@
 import React from "react"
 import styled from "styled-components"
-import Menu from "../components/Menu"
+import Header from "../components/Header"
+import Logo from "../components/Logo"
 
-const Container = styled.div`
+const ContainerWrapper = styled.div`
   background: black;
   color: red;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr minmax(1200px, 1fr) 1fr;
+  padding: 30px 0;
 `
+
+const Container = styled.div`
+  grid-column: 2;
+`
+
+const Content = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export default () => (
-  <Container>
-    <Menu />
-  </Container>
+  <ContainerWrapper>
+    <Container>
+      <Header />
+      <Content>
+        <Logo width="600px" />
+      </Content>
+    </Container>
+  </ContainerWrapper>
 )

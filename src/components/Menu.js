@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const MenuWrapper = styled.ul`
-  width: 550px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
 `
