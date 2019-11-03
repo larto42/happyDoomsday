@@ -7,6 +7,7 @@ const Header = styled.div`
   position: fixed;
   display: grid;
   grid-template-columns: 1fr minmax(1200px, 1fr) 1fr;
+  z-index: 10;
 `
 
 const HeaderContent = styled.div`
@@ -19,7 +20,7 @@ const HeaderContent = styled.div`
 export default () => (
   <Header>
     <HeaderContent>
-      <Logo width="10vh" />
+      <Logo width="12vh" />
       <Menu />
     </HeaderContent>
   </Header>

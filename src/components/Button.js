@@ -32,9 +32,6 @@ const ButtonWrapper = styled.div`
   position: relative;
   margin: 20px 0;
   z-index: 0;
-  &:hover {
-    background: gray;
-  }
 
   &:hover ${Rectangle}:nth-child(2) {
     transform: translateX(-60px);
