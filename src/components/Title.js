@@ -18,14 +18,15 @@ const Title = styled.h2`
 const TitleWrapper = styled.div`
   position: relative;
   margin: 20px 0;
+  margin-left: ${props => props.marginLeft}px;
   z-index: 0;
   &:hover {
     background: gray;
   }
 `
 
-export default ({ text }) => (
-  <TitleWrapper>
+export default ({ text, marginLeft = 0 }) => (
+  <TitleWrapper marginLeft={marginLeft}>
     <Title>{text}</Title>
     <Rectangle color="#ff00ff" width="90" height="35" left="-20" top="-15" />
     <Rectangle color="#ff00ff" width="50" height="8" left="-100" top="40" />

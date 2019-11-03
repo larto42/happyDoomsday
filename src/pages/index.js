@@ -16,6 +16,7 @@ import wb3 from "../../static/wolfBusters/WB3.jpg"
 import wb4 from "../../static/wolfBusters/WB4.jpg"
 import wb5 from "../../static/wolfBusters/WB5.jpg"
 import TeamPage from "../components/pagesComponents/TeamPage"
+import ContactPage from "../components/pagesComponents/ContactPage"
 
 export default () => {
   const imgGallery = {
@@ -53,6 +54,7 @@ export default () => {
         description={descriptions.wolfBusters}
       />
       <TeamPage />
+      <ContactPage />
     </React.Fragment>
   )
 }

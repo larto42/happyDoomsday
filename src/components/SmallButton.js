@@ -6,7 +6,7 @@ const Button = styled.button`
   color: #000;
   background: #fff;
   padding: 15px 20px;
-  font-size: 36px;
+  font-size: ${props => props.fontSize}px;
   border: none;
   cursor: pointer;
   transition: transform 0.1s;
@@ -14,7 +14,8 @@ const Button = styled.button`
 
   @media (max-width: 1280px) {
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: ${props =>
+      props.fontSize * 0.6 >= 18 ? props.fontSize * 0.6 : 18}px;
     text-shadow: #ff00ff 2px 1px;
   }
 `
@@ -24,7 +25,7 @@ const ButtonWrapper = styled.div`
   margin: 20px 0;
   z-index: 0;
   display: inline-block;
-  left: 40%;
+  left: ${props => props.left}%;
 
   ${Rectangle}:nth-child(6) {
     z-index: 2;
@@ -48,14 +49,21 @@ const ButtonWrapper = styled.div`
     transform: scale(1.015);
   }
 `
-
-export default ({ text }) => (
-  <ButtonWrapper>
-    <Button>{text}</Button>
-    <Rectangle color="#00ffff" width="95" height="9" left="-40" top="20" />
-    <Rectangle color="#00ffff" width="60" height="15" left="-85" top="33" />
-    <Rectangle color="#ff00ff" width="90" height="40" right="-60" top="-6" />
-    <Rectangle color="#ff00ff" width="45" height="12" right="-70" bottom="14" />
-    <Rectangle color="#00ffff" width="95" height="35" left="-30" bottom="-10" />
+const defaultRectangles = [
+  <Rectangle color="#00ffff" width="95" height="9" left="-40" top="20" />,
+  <Rectangle color="#00ffff" width="60" height="15" left="-85" top="33" />,
+  <Rectangle color="#ff00ff" width="90" height="40" right="-60" top="-6" />,
+  <Rectangle color="#ff00ff" width="45" height="12" right="-70" bottom="14" />,
+  <Rectangle color="#00ffff" width="95" height="35" left="-30" bottom="-10" />,
+]
+export default ({
+  text,
+  left = 40,
+  fontSize = 36,
+  rectangles = defaultRectangles,
+}) => (
+  <ButtonWrapper left={left}>
+    <Button fontSize={fontSize}>{text}</Button>
+    {rectangles}
   </ButtonWrapper>
 )
