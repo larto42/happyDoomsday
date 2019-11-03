@@ -16,6 +16,10 @@ const TeamCards = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 60px;
+
+  @media (max-width: 1280px) {
+    margin: 30px;
+  }
 `
 
 const Spacer = styled.div`
@@ -28,16 +32,26 @@ const Spacer = styled.div`
 const Description = styled.div`
   width: 65%;
   align-self: flex-start;
+
+  @media (max-width: 1280px) {
+    margin-left: 50px;
+  }
 `
 
 const DescriptionTitle = styled.h4`
   font-size: 24px;
   margin: 30px 0;
+  @media (max-width: 1280px) {
+    font-size: 20px;
+  }
 `
 
 const DescriptionParagraph = styled.p`
   font-size: 18px;
   margin: 20px 0;
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
 `
 
 export default ({ bgImage }) => (

@@ -13,6 +13,11 @@ const Image = styled.img`
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
+
+  @media (max-width: 1280px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 
 const Name = styled.h3`

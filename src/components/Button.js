@@ -9,6 +9,10 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   transition: transform 0.1s;
+
+  @media (max-width: 1280px) {
+    font-size: 30px;
+  }
 `
 
 const HighlightText = styled.span`
