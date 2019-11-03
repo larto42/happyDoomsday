@@ -1,8 +1,10 @@
 import React from "react"
 import Header from "../components/Header"
 import IndexPage from "../components/pagesComponents/IndexPage"
-import piratesBg from "../../static/piraciBg.jpg"
 import ProjectPage from "../components/pagesComponents/ProjectPage"
+
+import piratesBg from "../../static/piraciBg.jpg"
+import wolfBustersBg from "../../static/wolfBustersBg.jpg"
 
 import p1 from "../../static/pirates/IS1.png"
 import p2 from "../../static/pirates/IS2.png"
@@ -13,6 +15,7 @@ import wb2 from "../../static/wolfBusters/WB2.jpg"
 import wb3 from "../../static/wolfBusters/WB3.jpg"
 import wb4 from "../../static/wolfBusters/WB4.jpg"
 import wb5 from "../../static/wolfBusters/WB5.jpg"
+import TeamPage from "../components/pagesComponents/TeamPage"
 
 export default () => {
   const imgGallery = {
@@ -45,10 +48,11 @@ export default () => {
       />
       <ProjectPage
         title="WolfBusters"
-        bgImage={piratesBg}
+        bgImage={wolfBustersBg}
         galleryImgs={imgGallery.wolfBusters}
         description={descriptions.wolfBusters}
       />
+      <TeamPage />
     </React.Fragment>
   )
 }

@@ -9,6 +9,10 @@ const Content = styled.div`
   flex-grow: 2;
   margin-top: ${props => props.marginTop}px;
   height: 0px;
+
+  @media (max-width: 1280px) {
+    margin-top: ${props => props.marginTop * 0.5}px;
+  }
 `
 
 export default props => (
