@@ -15,7 +15,7 @@ const TeamCards = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 50px;
+  margin: 60px;
 `
 
 const Spacer = styled.div`

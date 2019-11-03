@@ -1,8 +1,10 @@
 import React from "react"
 import Header from "../components/Header"
 import IndexPage from "../components/pagesComponents/IndexPage"
-import piratesBg from "../../static/piraciBg.jpg"
 import ProjectPage from "../components/pagesComponents/ProjectPage"
+
+import piratesBg from "../../static/piraciBg.jpg"
+import wolfBustersBg from "../../static/wolfBustersBg.jpg"
 
 import p1 from "../../static/pirates/IS1.png"
 import p2 from "../../static/pirates/IS2.png"
@@ -46,7 +48,7 @@ export default () => {
       />
       <ProjectPage
         title="WolfBusters"
-        bgImage={piratesBg}
+        bgImage={wolfBustersBg}
         galleryImgs={imgGallery.wolfBusters}
         description={descriptions.wolfBusters}
       />
