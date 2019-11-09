@@ -1,12 +1,16 @@
 import React from "react"
 import ContainerWrapper from "../ContainerWrapper"
-import Container from "../Container"
-import Content from "../Content"
-import Title from "../Title"
 import Gallery from "../Gallery"
 import ProjectDescription from "../ProjectDescription"
-import SmallButton from "../SmallButton"
 import styled from "styled-components"
+
+const Container = styled.div `
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 30px;
+  align-items:center;
+`
 
 const DescriptionWrapper = styled.div`
   grid-column: 2;
@@ -14,18 +18,12 @@ const DescriptionWrapper = styled.div`
 `
 
 export default ({ bgImage, title, galleryImgs, description }) => (
-  <React.Fragment>
-    <ContainerWrapper bgImage={bgImage}>
-      <Container>
-        <Content marginTop="100">
-          <Title text={title} />
-        </Content>
-      </Container>
+  <ContainerWrapper bgImage={bgImage}>
+    <Container>
       <Gallery images={galleryImgs} />
       <DescriptionWrapper>
-        <ProjectDescription text={description} />
-        <SmallButton text="Download" />
+        <ProjectDescription text={description} title={title}/>
       </DescriptionWrapper>
-    </ContainerWrapper>
-  </React.Fragment>
+    </Container>
+  </ContainerWrapper>
 )

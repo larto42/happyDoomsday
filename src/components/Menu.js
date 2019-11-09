@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {Cyan} from '../Colors'
 
 const Menu = styled.ul`
   width: 450px;
@@ -13,7 +14,7 @@ const MenuItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: #ff00ff;
+    color: ${Cyan};
     background: white;
   }
 `

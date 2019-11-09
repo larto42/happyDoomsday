@@ -1,21 +1,20 @@
 import React from "react"
 import Rectangle from "./Rectangle"
 import styled from "styled-components"
+import {Cyan} from './../Colors'
 
 const Button = styled.button`
   color: #000;
   background: #fff;
   padding: 15px 20px;
-  font-size: 36px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
   transition: transform 0.1s;
-  text-shadow: #ff00ff 3px 2px;
 
   @media (max-width: 1280px) {
     padding: 10px 20px;
     font-size: 20px;
-    text-shadow: #ff00ff 2px 1px;
   }
 `
 
@@ -24,7 +23,7 @@ const ButtonWrapper = styled.div`
   margin: 20px 0;
   z-index: 0;
   display: inline-block;
-  left: 40%;
+  /* left: 40%; */
 
   ${Rectangle}:nth-child(6) {
     z-index: 2;
@@ -52,10 +51,10 @@ const ButtonWrapper = styled.div`
 export default ({ text }) => (
   <ButtonWrapper>
     <Button>{text}</Button>
-    <Rectangle color="#00ffff" width="95" height="9" left="-40" top="20" />
-    <Rectangle color="#00ffff" width="60" height="15" left="-85" top="33" />
-    <Rectangle color="#ff00ff" width="90" height="40" right="-60" top="-6" />
-    <Rectangle color="#ff00ff" width="45" height="12" right="-70" bottom="14" />
-    <Rectangle color="#00ffff" width="95" height="35" left="-30" bottom="-10" />
+    <Rectangle color={Cyan} width="95" height="9" left="-20" top="20" />
+    <Rectangle color={Cyan} width="60" height="15" left="-45" top="33" />
+    <Rectangle color={Cyan} width="90" height="40" right="-30" top="-6" />
+    <Rectangle color={Cyan} width="45" height="12" right="-35" bottom="14" />
+    <Rectangle color={Cyan} width="95" height="35" left="-15" bottom="-10" />
   </ButtonWrapper>
 )

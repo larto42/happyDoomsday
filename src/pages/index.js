@@ -6,9 +6,9 @@ import ProjectPage from "../components/pagesComponents/ProjectPage"
 import piratesBg from "../../static/piraciBg.jpg"
 import wolfBustersBg from "../../static/wolfBustersBg.jpg"
 
-import p1 from "../../static/pirates/IS1.png"
-import p2 from "../../static/pirates/IS2.png"
-import p3 from "../../static/pirates/IS3.png"
+import p1 from "../../static/pirates/IS1.jpg"
+import p2 from "../../static/pirates/IS2.jpg"
+import p3 from "../../static/pirates/IS3.jpg"
 
 import wb1 from "../../static/wolfBusters/WB1.jpg"
 import wb2 from "../../static/wolfBusters/WB2.jpg"
@@ -19,8 +19,42 @@ import TeamPage from "../components/pagesComponents/TeamPage"
 
 export default () => {
   const imgGallery = {
-    pirates: [p1, p2, p3, p1, p2, p3],
-    wolfBusters: [wb1, wb2, wb3, wb4, wb5],
+    pirates: [
+      {
+        original: p1,
+        thumbnail: p1,
+      },
+      {
+        original: p2,
+        thumbnail: p2
+      },
+      {
+        original: p3,
+        thumbnail: p3
+      }
+    ],
+    wolfBusters: [
+      {
+        original: wb1,
+        thumbnail: wb1,
+      },
+      {
+        original: wb2,
+        thumbnail: wb2
+      },
+      {
+        original: wb3,
+        thumbnail: wb3
+      },
+      {
+        original: wb4,
+        thumbnail: wb4
+      },
+      {
+        original: wb5,
+        thumbnail: wb5
+      }
+    ]
   }
   const descriptions = {
     pirates: [

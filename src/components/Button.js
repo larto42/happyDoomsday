@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import {Cyan} from '../Colors'
 
 const Button = styled.button`
   color: #000;
   background: #fff;
   padding: 15px 100px;
-  font-size: 36px;
+  font-size: 1.5em;
   border: none;
   cursor: pointer;
   transition: transform 0.1s;
@@ -16,7 +17,7 @@ const Button = styled.button`
 `
 
 const HighlightText = styled.span`
-  color: #00ffff;
+  color: ${Cyan}
 `
 
 const Rectangle = styled.div`
@@ -61,28 +62,28 @@ export default ({ text, highlightText }) => (
       {highlightText && <HighlightText>{highlightText}</HighlightText>}
     </Button>
     <Rectangle
-      color="#00ffff"
+      color={Cyan}
       width="445px"
       height="37px"
       left="-20px"
       top="-20px"
     />
     <Rectangle
-      color="#00ffff"
+      color={Cyan}
       width="235px"
       height="8px "
       left="-100px"
       top="40px"
     />
     <Rectangle
-      color="#ff00ff"
+      color={Cyan}
       width="279px"
       height="17px"
       right="-70px"
       top="20px"
     />
     <Rectangle
-      color="#ff00ff"
+      color={Cyan}
       width="380px"
       height="27px"
       right="-20px"

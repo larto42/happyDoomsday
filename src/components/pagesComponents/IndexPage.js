@@ -4,8 +4,17 @@ import Slogan from "../Slogan"
 import Button from "../Button"
 import ContainerWrapper from "../ContainerWrapper"
 import Container from "../Container"
-import Content from "../Content"
 import indexBg from "../../../static/indexBg.jpg"
+import styled from 'styled-components'
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 2;
+  margin: 4vh 0;
+`
 
 export default () => (
   <ContainerWrapper bgImage={indexBg}>
