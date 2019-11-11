@@ -10,6 +10,7 @@ const Container = styled.div `
   grid-template-columns: 2fr 1fr;
   column-gap: 30px;
   align-items:center;
+  padding-top: 17vh;
 `
 
 const DescriptionWrapper = styled.div`

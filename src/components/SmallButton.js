@@ -22,12 +22,7 @@ const ButtonWrapper = styled.div`
   position: relative;
   margin: 20px 0;
   z-index: 0;
-  display: inline-block;
-  /* left: 40%; */
-
-  ${Rectangle}:nth-child(6) {
-    z-index: 2;
-  }
+  
   &:hover ${Rectangle}:nth-child(2) {
     transform: translateX(-5px);
   }

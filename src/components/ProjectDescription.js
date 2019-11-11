@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Title from './Title'
+import GameTitle from './GameTitle'
 import SmallButton from "./SmallButton"
 
 const DescriptionWrapper = styled.div`
@@ -24,7 +24,7 @@ const Paragraph = styled.p`
 
 export default ({ title, text }) => (
   <DescriptionWrapper>
-    <Title text={title} />
+    <GameTitle text={title} />
     <Description>
       {text.map((paragraph, index) => (
         <Paragraph key={index}>{paragraph}</Paragraph>

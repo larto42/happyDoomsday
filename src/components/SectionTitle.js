@@ -1,14 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import {Cyan} from "../Colors"
-// import Rectangle from "./Rectangle"
+import * as Colors from "../Colors"
 
 const Title = styled.h2`
-  color: ${Cyan};
-  font-size: 26px;
-  padding: 10px 0 30px;
+  color: ${Colors.White};
+  font-size: 24px;
+  background: ${Colors.Cyan};
+  padding: 15px 80px;
   border: none;
   text-align: center;
+  justify-self: center;
+  align-self:flex-start;
 `
 
 export default ({ text }) => (
