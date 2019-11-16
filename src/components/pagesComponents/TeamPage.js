@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import ContainerWrapper from "../ContainerWrapper"
-import SectionTitle from "../SectionTitle"
+import {Title} from "../SectionTitleStyle"
 import TeammateCard from "../TeammateCard"
 
 import martaImg from "../../../static/team/marta.jpg"
@@ -51,7 +51,7 @@ const DescriptionParagraph = styled.p`
 export default ({ bgImage }) => (
   <ContainerWrapper bgImage={bgImage}>
     <Container>
-      <SectionTitle text="Our Team" />
+      <Title>Our Team</Title>
       <TeamCards>
         <TeammateCard
           image={marcinImg}

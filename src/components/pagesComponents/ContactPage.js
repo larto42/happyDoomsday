@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import SectionTitle from '../SectionTitle';
+import {Title} from '../SectionTitleStyle';
 import ContainerWrapper from '../ContainerWrapper'
 // import {Button, ButtonWrapper} from '../SmallButton/SmallButtonStyles';
-import Button from '../Button';
+import Button from '../SmallButton/SmallButton';
 
 const Container = styled.div`
     padding-top: 17vh;
@@ -43,13 +43,28 @@ const Textarea = styled.textarea `
 `
 
 const ButtonContainer = styled.div`
-
+    align-self: flex-end;
 `
+
+const LeftSide = styled.div`
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+    padding-bottom: 40px;
+`
+
+const ContactTitle = styled(Title) `
+    align-self: center;
+` 
 
 export default () => (
     <ContainerWrapper>
         <Container>
-            <SectionTitle text="Contact" />
+            <LeftSide>
+                <ContactTitle>Contact</ContactTitle>
+                <span>happydoomsday &copy; {new Date().getFullYear()}</span>
+            </LeftSide>
             <FormWrapper>
                 <p>Feel free to contact us by contact form or e-mail:</p>
                 <Mail>team@happydoomsday.com</Mail>
@@ -59,7 +74,7 @@ export default () => (
                     <Textarea placeholder="Message" rows="12"></Textarea>
                 </Form>
                 <ButtonContainer>
-                    <Button>Send</Button>
+                    <Button>Send message</Button>
                 </ButtonContainer>
             </FormWrapper>
         </Container>
