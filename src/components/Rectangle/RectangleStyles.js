@@ -1,7 +1,6 @@
-import React from "react"
 import styled from "styled-components"
 
-const Rectangle = styled.div`
+export const Rectangle = styled.div`
   position: absolute;
   z-index: -1;
   background: ${props => props.color};
@@ -11,6 +10,7 @@ const Rectangle = styled.div`
   top: ${props => props.top}px;
   right: ${props => props.right}px;
   bottom: ${props => props.bottom}px;
+  transition: transform .2s;
 
   @media (max-width: 1280px) {
     width: ${props => props.width}%;
@@ -21,15 +21,3 @@ const Rectangle = styled.div`
     bottom: ${props => props.bottom * 0.6}px;
   }
 `
-
-export default ({ color, width, height, left, top, right, bottom }) => (
-  <Rectangle
-    color={color}
-    width={width}
-    height={height}
-    left={left}
-    top={top}
-    right={right}
-    bottom={bottom}
-  />
-)

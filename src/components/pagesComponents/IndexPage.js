@@ -22,7 +22,7 @@ export default () => (
       <Content>
         <Logo width="55vh" />
         <Slogan text="Dont worry, You are in good hands." />
-        <Button text="Check out our " highlightText="projects" />
+        <Button highlightText="projects">Check out our </Button>
       </Content>
     </Container>
   </ContainerWrapper>

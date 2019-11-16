@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import GameTitle from './GameTitle'
-import SmallButton from "./SmallButton"
+import SmallButton from "./SmallButton/SmallButton"
 
 const DescriptionWrapper = styled.div`
   background: black;
@@ -30,6 +30,6 @@ export default ({ title, text }) => (
         <Paragraph key={index}>{paragraph}</Paragraph>
       ))}
     </Description>
-    <SmallButton text="Download" />
+    <SmallButton>Download</SmallButton>
   </DescriptionWrapper>
 )
