@@ -10,6 +10,7 @@ const ContainerWrapper = styled.div`
   height: 100vh;
   width: 100%;
   position: relative;
+  /* scroll-snap-align: start; */
 `
 
 export default props => (

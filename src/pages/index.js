@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/Header"
 import IndexPage from "../components/pagesComponents/IndexPage"
 import ProjectPage from "../components/pagesComponents/ProjectPage"
+import styled from 'styled-components'
 
 import piratesBg from "../../static/piraciBg.jpg"
 import wolfBustersBg from "../../static/wolfBustersBg.jpg"
@@ -71,8 +72,19 @@ export default () => {
       `Project made for Ludum Dare 43 Game Jam`,
     ],
   }
+
+  const PageContainer = styled.div `
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    height: 100vh;
+
+    & > div {
+      scroll-snap-align: start;
+    }
+  `
+  
   return (
-    <React.Fragment>
+    <PageContainer>
       <Header />
       <IndexPage />
       <ProjectPage
@@ -89,6 +101,6 @@ export default () => {
       />
       <TeamPage />
       <ContactPage />
-    </React.Fragment>
+    </PageContainer>
   )
 }
