@@ -44,9 +44,9 @@ const ButtonWrapper = styled.div`
   }
 `
 
-export default ({ children, highlightText }) => (
+export default ({ children, highlightText, handleClick}) => (
   <ButtonWrapper>
-    <Button>
+    <Button onClick={handleClick}>
       {children}
       {highlightText && <HighlightText>{highlightText}</HighlightText>}
     </Button>

@@ -1,4 +1,6 @@
 import React from "react"
+// import {Link} from 'gatsby';
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 import styled from "styled-components"
 import {Cyan} from '../Colors'
 
@@ -18,11 +20,14 @@ const MenuItem = styled.li`
     background: white;
   }
 `
-export default () => (
+
+const handleClick = place => {console.log(place); place.current.scrollIntoView({behavior: 'smooth'});}
+
+export default ({indexRef, projectsRef, teamRef, contactRef}) => (
   <Menu>
-    <MenuItem>Home</MenuItem>
-    <MenuItem>Projects</MenuItem>
-    <MenuItem>Team</MenuItem>
-    <MenuItem>Contact</MenuItem>
+    <MenuItem onClick={()=>handleClick(indexRef)}>Home</MenuItem>
+    <MenuItem onClick={()=>handleClick(projectsRef)}>Projects</MenuItem>
+    <MenuItem onClick={()=>handleClick(teamRef)}>Team</MenuItem>
+    <MenuItem onClick={()=>handleClick(contactRef)}>Contact</MenuItem>
   </Menu>
 )

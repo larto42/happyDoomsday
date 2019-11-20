@@ -16,13 +16,15 @@ const Content = styled.div`
   margin: 4vh 0;
 `
 
-export default () => (
+const handleClick = place => place.current.scrollIntoView({behavior: "smooth"});
+
+export default ({projectsRef}) => (
   <ContainerWrapper bgImage={indexBg}>
     <Container>
       <Content>
         <Logo width="55vh" />
         <Slogan text="Dont worry, You are in good hands." />
-        <Button highlightText="projects">Check out our </Button>
+        <Button highlightText="projects" handleClick={()=>handleClick(projectsRef)}>Check out our </Button>
       </Content>
     </Container>
   </ContainerWrapper>

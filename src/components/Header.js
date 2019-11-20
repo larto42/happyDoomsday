@@ -17,11 +17,11 @@ const HeaderContent = styled.div`
   grid-column: 2;
   margin: 20px 0 20px 40px;
 `
-export default () => (
+export default ({indexRef, projectsRef, teamRef, contactRef}) => (
   <Header>
     <HeaderContent>
       <Logo width="12vh" />
-      <Menu />
+      <Menu indexRef={indexRef} projectsRef={projectsRef} teamRef={teamRef} contactRef={contactRef} />
     </HeaderContent>
   </Header>
 )
