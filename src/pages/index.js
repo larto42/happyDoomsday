@@ -88,7 +88,7 @@ export default class index extends Component {
       overflow: auto;
       height: 100vh;
   
-      & > div {
+      & > section {
         scroll-snap-align: start;
       }
     `
@@ -107,6 +107,8 @@ export default class index extends Component {
             galleryImgs={imgGallery.pirates}
             description={descriptions.pirates}
           />
+        </section>
+        <section>
           <ProjectPage
             title="WolfBusters"
             bgImage={wolfBustersBg}
