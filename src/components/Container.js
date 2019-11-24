@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -11,4 +11,4 @@ const Container = styled.div`
   padding: 2em 0 3em;
 `
 
-export default props => <Container>{props.children}</Container>
+export default forwardRef((props, ref) => <Container ref={ref}>{props.children}</Container>) 

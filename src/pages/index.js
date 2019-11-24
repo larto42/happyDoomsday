@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Header from "../components/Header"
 import IndexPage from "../components/pagesComponents/IndexPage"
 import ProjectPage from "../components/pagesComponents/ProjectPage"
-import styled from 'styled-components'
 
 import piratesBg from "../../static/piraciBg.jpg"
 import wolfBustersBg from "../../static/wolfBustersBg.jpg"
@@ -22,7 +21,7 @@ import ContactPage from "../components/pagesComponents/ContactPage"
 export default class index extends Component {
   constructor(props) {
     super(props);
-
+    
     this.indexRef = React.createRef();
     this.projectsRef = React.createRef();
     this.teamRef = React.createRef();
@@ -83,46 +82,28 @@ export default class index extends Component {
       ],
     }
 
-    const PageContainer = styled.div`
-      scroll-snap-type: y mandatory;
-      overflow: auto;
-      height: 100vh;
-  
-      & > section {
-        scroll-snap-align: start;
-      }
-    `
+
 
     return (
-      <PageContainer>
+      <React.Fragment>
         <Header indexRef={this.indexRef} projectsRef={this.projectsRef} teamRef={this.teamRef} contactRef={this.contactRef} />
-        <section ref={this.indexRef}>
-          <IndexPage projectsRef={this.projectsRef}/>
-        </section>
-        <section ref={this.projectsRef}>
-          <ProjectPage
-            
-            title="Impossible Storrries!"
-            bgImage={piratesBg}
-            galleryImgs={imgGallery.pirates}
-            description={descriptions.pirates}
-          />
-        </section>
-        <section>
-          <ProjectPage
-            title="WolfBusters"
-            bgImage={wolfBustersBg}
-            galleryImgs={imgGallery.wolfBusters}
-            description={descriptions.wolfBusters}
-          />
-        </section>
-        <section ref={this.teamRef}>
-          <TeamPage/>
-        </section>
-        <section ref={this.contactRef} >
-          <ContactPage/>
-        </section>
-      </PageContainer>
+        <IndexPage projectsRef={this.projectsRef}  ref={this.indexRef} />
+        <ProjectPage
+          ref={this.projectsRef}
+          title="Impossible Storrries!"
+          bgImage={piratesBg}
+          galleryImgs={imgGallery.pirates}
+          description={descriptions.pirates}
+        />
+        <ProjectPage
+          title="WolfBusters"
+          bgImage={wolfBustersBg}
+          galleryImgs={imgGallery.wolfBusters}
+          description={descriptions.wolfBusters}
+        />
+        <TeamPage ref={this.teamRef} />
+        <ContactPage ref={this.contactRef} />
+      </React.Fragment>
     )
   }
 }

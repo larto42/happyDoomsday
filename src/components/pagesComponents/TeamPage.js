@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "styled-components"
 import ContainerWrapper from "../ContainerWrapper"
 import {Title} from "../SectionTitleStyle"
@@ -48,9 +48,9 @@ const DescriptionParagraph = styled.p`
   }
 `
 
-export default ({ bgImage }) => (
+export default forwardRef(({ bgImage }, ref) => (
   <ContainerWrapper bgImage={bgImage}>
-    <Container>
+    <Container ref={ref}>
       <Title>Our Team</Title>
       <TeamCards>
         <TeammateCard
@@ -87,4 +87,4 @@ export default ({ bgImage }) => (
       </Description>
     </Container>
   </ContainerWrapper>
-)
+))

@@ -10,11 +10,18 @@ body, h1, h2, h3, h4, textarea, input {
   font-family: Chakra Petch, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
+#gatsby-focus-wrapper {
   color: white;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100vh;
 }
 
-html, body {
+#gatsby-focus-wrapper > div {
+  scroll-snap-align: start;
+}
+
+/* html, body {
   height: 100vh;
   overflow: hidden;
-}
+} */

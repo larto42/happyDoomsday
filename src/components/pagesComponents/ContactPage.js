@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {Title} from '../SectionTitleStyle';
 import ContainerWrapper from '../ContainerWrapper'
@@ -58,9 +58,9 @@ const ContactTitle = styled(Title) `
     align-self: center;
 ` 
 
-export default () => (
+export default forwardRef((props, ref) => (
     <ContainerWrapper>
-        <Container>
+        <Container ref={ref}>
             <LeftSide>
                 <ContactTitle>Contact</ContactTitle>
                 <span>happydoomsday &copy; {new Date().getFullYear()}</span>
@@ -79,4 +79,4 @@ export default () => (
             </FormWrapper>
         </Container>
     </ContainerWrapper>
-)
+))

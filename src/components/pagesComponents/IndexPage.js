@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from 'react'
 import Logo from "../Logo"
 import Slogan from "../Slogan"
 import Button from "../Button"
@@ -15,17 +15,18 @@ const Content = styled.div`
   flex-grow: 2;
   margin: 4vh 0;
 `
+const handleClick = place => place.current.scrollIntoView({ behavior: "smooth" });
 
-const handleClick = place => place.current.scrollIntoView({behavior: "smooth"});
-
-export default ({projectsRef}) => (
-  <ContainerWrapper bgImage={indexBg}>
-    <Container>
-      <Content>
-        <Logo width="55vh" />
-        <Slogan text="Dont worry, You are in good hands." />
-        <Button highlightText="projects" handleClick={()=>handleClick(projectsRef)}>Check out our </Button>
-      </Content>
-    </Container>
-  </ContainerWrapper>
-)
+export default forwardRef(({ projectsRef }, ref) => {
+  return (
+    <ContainerWrapper bgImage={indexBg}>
+      <Container ref={ref}>
+        <Content>
+          <Logo width="55vh" />
+          <Slogan text="Dont worry, You are in good hands." />
+          <Button highlightText="projects" handleClick={() => handleClick(projectsRef)}>Check out our </Button>
+        </Content>
+      </Container>
+    </ContainerWrapper>
+  )
+})

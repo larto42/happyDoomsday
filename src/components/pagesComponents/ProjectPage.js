@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import ContainerWrapper from "../ContainerWrapper"
 import Gallery from "../Gallery"
 import ProjectDescription from "../ProjectDescription"
@@ -18,13 +18,13 @@ const DescriptionWrapper = styled.div`
   position: relative;
 `
 
-export default ({ bgImage, title, galleryImgs, description }) => (
+export default forwardRef(({ bgImage, title, galleryImgs, description }, ref) => (
   <ContainerWrapper bgImage={bgImage}>
-    <Container>
+    <Container ref={ref}>
       <Gallery images={galleryImgs} />
       <DescriptionWrapper>
         <ProjectDescription text={description} title={title}/>
       </DescriptionWrapper>
     </Container>
   </ContainerWrapper>
-)
+))

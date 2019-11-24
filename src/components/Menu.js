@@ -21,7 +21,7 @@ const MenuItem = styled.li`
   }
 `
 
-const handleClick = place => {console.log(place); place.current.scrollIntoView({behavior: 'smooth'});}
+const handleClick = place => place.current.scrollIntoView({behavior: 'smooth'})
 
 export default ({indexRef, projectsRef, teamRef, contactRef}) => (
   <Menu>
