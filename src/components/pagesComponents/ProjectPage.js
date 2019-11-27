@@ -7,7 +7,7 @@ import styled from "styled-components"
 const Container = styled.div `
   grid-column: 2;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 400px;
   column-gap: 30px;
   align-items:center;
   padding-top: 17vh;

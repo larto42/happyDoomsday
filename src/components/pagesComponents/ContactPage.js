@@ -40,6 +40,8 @@ const Textarea = styled.textarea `
     margin: 0 0 10px;
     padding: 10px;
     font-size: 13.3px;
+    resize: none;
+    height: 25vh;
 `
 
 const ButtonContainer = styled.div`
@@ -71,7 +73,7 @@ export default forwardRef((props, ref) => (
                 <Form>
                     <Input type="text" value="" placeholder="Title" />
                     <Input type="email" value="" placeholder="E-mail" />
-                    <Textarea placeholder="Message" rows="12"></Textarea>
+                    <Textarea placeholder="Message" ></Textarea>
                 </Form>
                 <ButtonContainer>
                     <Button>Send message</Button>

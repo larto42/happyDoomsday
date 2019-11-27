@@ -6,8 +6,17 @@ import Logo from "./Logo"
 const Head = styled.div`
   position: fixed;
   display: grid;
-  grid-template-columns: 1fr minmax(1200px, 1fr) 1fr;
+  width: 100%;
+  grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
   z-index: 10;
+
+  @media (min-width: 1700px) and (min-height: 950px) {
+    grid-template-columns: 1fr minmax(auto, 1600px) 1fr;
+  }
+
+  @media (min-width: 1900px) and (min-height: 1050px) {
+    grid-template-columns: 1fr minmax(auto, 1800px) 1fr;
+  }
 `
 
 const HeaderContent = styled.div`
@@ -19,7 +28,7 @@ const HeaderContent = styled.div`
 `
 
 const LogoWrapper = styled.div `
-  opacity: .4;
+  opacity: 1;
 `
 
 export default class Header extends Component {
