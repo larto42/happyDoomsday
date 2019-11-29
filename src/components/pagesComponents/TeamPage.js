@@ -70,20 +70,19 @@ export default forwardRef(({ bgImage }, ref) => (
         />
       </TeamCards>
       <Description>
-        <DescriptionTitle>Coś tam o zespole</DescriptionTitle>
+        <DescriptionTitle>Who we are?</DescriptionTitle>
         <DescriptionParagraph>
-          Protect your sheeps from vicious wolves by shooting them with
-          precious cabbage. But be careful not to run over one of your
-          fluffy friends when drifting with your tractor. But be careful not
-          to run over one of your fluffy friends when drifting with your
-          tractor.
-            </DescriptionParagraph>
+          We are a team of 3 passionate game developers from Poland. Creating entertaining projects and solving problems 
+          is what we really like. That's why we have participated in uncountable gamejams and contests!
+        </DescriptionParagraph>
         <DescriptionParagraph>
-          Protect your sheeps from vicious wolves by shooting them with
-          precious cabbage. But be careful not to run over one of your
-          fluffy friends when drifting with your tractor. But be careful not
-          to run over one of your fluffy friends when drifting.
-            </DescriptionParagraph>
+          Low level programming doesn't scare us. One of our games is created on a custom engine 
+          that we have developed from scratch. We like to experiment and test new tools and workflows.
+          That's why we have also experience in photogrammetry, motion capture and a lot more!
+        </DescriptionParagraph>
+        <DescriptionParagraph>
+          If you want to join us or get in touch just come to our contact page!
+        </DescriptionParagraph>
       </Description>
     </Container>
   </ContainerWrapper>
