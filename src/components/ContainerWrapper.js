@@ -21,6 +21,11 @@ const ContainerWrapper = styled.div`
   }
 `
 
-export default props => (
-  <ContainerWrapper bgImage={props.bgImage}>{props.children}</ContainerWrapper>
+export default ({ className, bgImage, children }) => (
+  <ContainerWrapper 
+    className={`container-wrapper ${className || ''}`}
+    bgImage={bgImage}
+  >
+    {children}
+  </ContainerWrapper>
 )

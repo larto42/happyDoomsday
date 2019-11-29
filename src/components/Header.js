@@ -45,17 +45,40 @@ export default class Header extends Component {
 
   componentDidMount = () => {  
     let options = {
-      root: null,
+      root: this.projectsRef.current,
       rootMargin: "0px",
-      threshold: [.1,.2,.3,.4,.5,.6,.7,.8,.9,1]
+      threshold: [0,.5,.6,.7,.8,.9,1]
     };
 
+    // Select container with projects
+    const projectsPage = document.querySelector('.projects-page');
     let observer = new IntersectionObserver(this.handleIntersect, options);
-    observer.observe(this.logoRef.current);
+    observer.observe(projectsPage);
   }
 
   handleIntersect = (entries, observer) => {
-    console.log(entries)
+    const { intersectionRatio: ratio, boundingClientRect: { y } } = entries[0];
+    if(y < 0) return false; // If already past the screen with item don't change opacity
+
+    this.logoRef.current.style.opacity = this.calculateOpacity(ratio);
+  }
+
+  calculateOpacity = (input) => {
+    /**
+     * Map range to different range by:
+     * slope = (output_end - output_start) / (input_end - input_start)
+     * output = output_start + slope * (input - input_start)
+     */
+    const slope = 2.5; // how fast to change the fade
+    const inputStart = .5;
+
+    let output = slope * (input - inputStart);
+
+    // normalize opacity
+    output = output < 0 ? 0 : output;
+    output = output > 1 ? 1 : output;
+
+    return output;
   }
 
   render() {

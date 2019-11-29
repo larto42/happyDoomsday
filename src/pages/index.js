@@ -90,6 +90,7 @@ export default class index extends Component {
         <IndexPage projectsRef={this.projectsRef}  ref={this.indexRef} />
         <ProjectPage
           ref={this.projectsRef}
+          className="projects-page"
           title="Impossible Storrries!"
           bgImage={piratesBg}
           galleryImgs={imgGallery.pirates}

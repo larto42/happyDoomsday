@@ -18,8 +18,8 @@ const DescriptionWrapper = styled.div`
   position: relative;
 `
 
-export default forwardRef(({ bgImage, title, galleryImgs, description }, ref) => (
-  <ContainerWrapper bgImage={bgImage}>
+export default forwardRef(({ bgImage, title, galleryImgs, description, className }, ref) => (
+  <ContainerWrapper bgImage={bgImage} className={className}>
     <Container ref={ref}>
       <Gallery images={galleryImgs} />
       <DescriptionWrapper>
