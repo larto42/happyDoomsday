@@ -57,8 +57,8 @@ export default class Header extends Component {
   }
 
   handleIntersect = (entries, observer) => {
-    const { intersectionRatio: ratio, boundingClientRect: { y } } = entries[0];
-    if(y < 0) return false; // If already past the screen with item don't change opacity
+    let { intersectionRatio: ratio, boundingClientRect: { y } } = entries[0];
+    if(y < 0) ratio = 1; // If already past the screen with item don't change opacity
 
     this.logoRef.current.style.opacity = this.calculateOpacity(ratio);
   }
