@@ -28,7 +28,7 @@ const HeaderContent = styled.div`
 `
 
 const LogoWrapper = styled.div `
-  opacity: 1;
+  opacity: 0;
 `
 
 export default class Header extends Component {
