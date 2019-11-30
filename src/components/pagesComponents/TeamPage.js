@@ -12,7 +12,7 @@ const TeamCards = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 15%;
 `
 
 const Container = styled.div `
@@ -31,6 +31,11 @@ const Description = styled.div`
   @media (max-width: 1280px) {
     margin-left: 50px;
   }
+
+  /* @media (max-width: 1400px) {
+    width: auto;
+    margin-right: 10%;
+  } */
 `
 
 const DescriptionTitle = styled.h4`
@@ -42,9 +47,13 @@ const DescriptionTitle = styled.h4`
 
 const DescriptionParagraph = styled.p`
   font-size: 18px;
-  margin: 20px 0;
-  @media (max-width: 1280px) {
+  margin: 10px 0;
+  /* @media (max-width: 1280px) {
     font-size: 16px;
+  } */
+  @media (max-width: 1400px) {
+    font-size: 16px;
+    line-height:18px;
   }
 `
 
