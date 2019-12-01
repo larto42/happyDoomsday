@@ -4,6 +4,7 @@ import {Title} from '../SectionTitleStyle';
 import ContainerWrapper from '../ContainerWrapper'
 // import {Button, ButtonWrapper} from '../SmallButton/SmallButtonStyles';
 import Button from '../SmallButton/SmallButton';
+import {Cyan, Magenta} from '../../Colors';
 
 const Container = styled.div`
     padding-top: 17vh;
@@ -46,6 +47,20 @@ const Textarea = styled.textarea `
 
 const ButtonContainer = styled.div`
     align-self: flex-end;
+`
+
+const SubmitWrapper = styled.div `
+    display: flex;
+    justify-content: ${(props) => props.showMsg ? 'space-between' : 'flex-end'};
+    align-items: center;
+`
+
+const SuccessMsg = styled.div `
+    color: ${Cyan};
+`
+
+const ErrorMsg = styled.div `
+    color: ${Magenta};
 `
 
 const LeftSide = styled.div`
@@ -91,8 +106,11 @@ class ContactPage extends Component {
                 message
             }) // body data type must match "Content-Type" header
         });
-        const json = await response.json(); // parses JSON response into native JavaScript objects
-        console.log(json);
+        const odp = await response;
+        console.log(odp);
+        // const json = await response.json(); // parses JSON response into native JavaScript objects
+        // console.log('response', response);
+        // console.log(json);
     }
 
     handleInputChange = (event) => {
@@ -107,7 +125,8 @@ class ContactPage extends Component {
 
     render() {
         const {innerRef} = this.props;
-        const {subject, email, message} = this.state;
+        const {subject, email, message, showSuccess, showError} = this.state;
+        const showMsg = showSuccess || showError;
 
         return (
             <ContainerWrapper>
@@ -123,9 +142,13 @@ class ContactPage extends Component {
                             <Input name="subject" type="text" value={subject} placeholder="Title" onChange={this.handleInputChange} required />
                             <Input name="email" type="email" value={email} placeholder="E-mail" onChange={this.handleInputChange} required />
                             <Textarea name="message" placeholder="Message" value={message} onChange={this.handleInputChange} required ></Textarea>
-                            <ButtonContainer>
-                                <Button>Send message</Button>
-                            </ButtonContainer>
+                            <SubmitWrapper showMsg={showMsg}>
+                                {showSuccess && <SuccessMsg>Message has been sent.</SuccessMsg>}
+                                {showError && <ErrorMsg>Something went wrong.</ErrorMsg>}
+                                <ButtonContainer>
+                                    <Button>Send message</Button>
+                                </ButtonContainer>
+                            </SubmitWrapper>
                         </Form>
                     </FormWrapper>
                 </Container>

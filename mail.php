@@ -1,5 +1,6 @@
 <?php
     // header("Location: /#contact");
+    header('Content-Type: application/json');
 
     $data = json_decode(file_get_contents('php://input'), true);
 
@@ -16,7 +17,7 @@
 
     $subject = '=?UTF-8?B?' . base64_encode($data['subject']) . '?=';
     $message = base64_encode($data['message']);
-    
+
     if($isDataValid) {
         mail($to_email, $subject, $message, $headers);
         echo json_encode(['status' => 'ok']);
