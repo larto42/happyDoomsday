@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components';
 import {Title} from '../SectionTitleStyle';
 import ContainerWrapper from '../ContainerWrapper'
@@ -58,27 +58,82 @@ const LeftSide = styled.div`
 
 const ContactTitle = styled(Title) `
     align-self: center;
-` 
+`
 
-export default forwardRef((props, ref) => (
-    <ContainerWrapper>
-        <Container ref={ref}>
-            <LeftSide>
-                <ContactTitle>Contact</ContactTitle>
-                <span>happydoomsday &copy; {new Date().getFullYear()}</span>
-            </LeftSide>
-            <FormWrapper>
-                <p>Feel free to contact us by contact form or e-mail:</p>
-                <Mail>team@happydoomsday.com</Mail>
-                <Form>
-                    <Input type="text" value="" placeholder="Title" />
-                    <Input type="email" value="" placeholder="E-mail" />
-                    <Textarea placeholder="Message" ></Textarea>
-                </Form>
-                <ButtonContainer>
-                    <Button>Send message</Button>
-                </ButtonContainer>
-            </FormWrapper>
-        </Container>
-    </ContainerWrapper>
-))
+class ContactPage extends Component {
+    state = {
+        subject: '',
+        email: '',
+        message: '',
+        showError: false,
+        showSuccess: false
+    };
+
+    submitForm = async (e) => {
+        e.preventDefault();
+
+        const {subject, email, message} = this.state;
+
+        const url = 'https://happydoomsday.com/mail.php';
+    
+        const response = await fetch(url, {
+            method: 'POST',
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            credentials: 'omit', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            
+            // body: JSON.stringify(data) // body data type must match "Content-Type" header
+            body: JSON.stringify({
+                subject,
+                email,
+                message
+            }) // body data type must match "Content-Type" header
+        });
+        const json = await response.json(); // parses JSON response into native JavaScript objects
+        console.log(json);
+    }
+
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+    
+        this.setState({
+            [name]: value
+        });
+    }
+
+    render() {
+        const {innerRef} = this.props;
+        const {subject, email, message} = this.state;
+
+        return (
+            <ContainerWrapper>
+                <Container ref={innerRef}>
+                    <LeftSide>
+                        <ContactTitle>Contact</ContactTitle>
+                        <span>happydoomsday &copy; {new Date().getFullYear()}</span>
+                    </LeftSide>
+                    <FormWrapper>
+                        <p>Feel free to contact us by contact form or e-mail:</p>
+                        <Mail>team@happydoomsday.com</Mail>
+                        <Form action="/mail.php" type="post" onSubmit={this.submitForm}>
+                            <Input name="subject" type="text" value={subject} placeholder="Title" onChange={this.handleInputChange} required />
+                            <Input name="email" type="email" value={email} placeholder="E-mail" onChange={this.handleInputChange} required />
+                            <Textarea name="message" placeholder="Message" value={message} onChange={this.handleInputChange} required ></Textarea>
+                            <ButtonContainer>
+                                <Button>Send message</Button>
+                            </ButtonContainer>
+                        </Form>
+                    </FormWrapper>
+                </Container>
+            </ContainerWrapper>
+        )
+    }
+}
+
+export default React.forwardRef((props, ref) => 
+    <ContactPage innerRef={ref} {...props}/>
+);

@@ -1,7 +1,7 @@
 import React from "react"
 import Rectangle from "../Rectangle/Rectangle"
 import {ButtonWrapper, Button} from './SmallButtonStyles';
-import {Cyan,White} from '../../Colors'
+import {Cyan} from '../../Colors'
 
 export default ({ children }) => (
   <ButtonWrapper>
