@@ -1,11 +1,14 @@
 import React from "react"
 import styled from "styled-components"
+import Rectangle from './Rectangle/Rectangle'
+import {Rectangle as RectangleStyle} from './Rectangle/RectangleStyles'
+import { Cyan } from '../Colors'
 
 const Button = styled.button`
   color: #000;
   background: #fff;
   padding: 15px 100px;
-  font-size: 36px;
+  font-size: 1.5em;
   border: none;
   cursor: pointer;
   transition: transform 0.1s;
@@ -16,20 +19,7 @@ const Button = styled.button`
 `
 
 const HighlightText = styled.span`
-  color: #00ffff;
-`
-
-const Rectangle = styled.div`
-  position: absolute;
-  z-index: -1;
-  background: ${props => props.color};
-  width: ${props => props.width};
-  height: ${props => props.height};
-  left: ${props => props.left};
-  top: ${props => props.top};
-  right: ${props => props.right};
-  bottom: ${props => props.bottom};
-  transition: transform 0.2s;
+  color: ${Cyan};
 `
 
 const ButtonWrapper = styled.div`
@@ -37,16 +27,16 @@ const ButtonWrapper = styled.div`
   margin: 20px 0;
   z-index: 0;
 
-  &:hover ${Rectangle}:nth-child(2) {
+  &:hover ${RectangleStyle}:nth-child(2) {
     transform: translateX(-60px);
   }
-  &:hover ${Rectangle}:nth-child(3) {
+  &:hover ${RectangleStyle}:nth-child(3) {
     transform: translateX(-40px);
   }
-  &:hover ${Rectangle}:nth-child(4) {
+  &:hover ${RectangleStyle}:nth-child(4) {
     transform: translateX(50px);
   }
-  &:hover ${Rectangle}:nth-child(5) {
+  &:hover ${RectangleStyle}:nth-child(5) {
     transform: translateX(70px);
   }
   &:hover ${Button} {
@@ -54,39 +44,39 @@ const ButtonWrapper = styled.div`
   }
 `
 
-export default ({ text, highlightText }) => (
+export default ({ children, highlightText, handleClick}) => (
   <ButtonWrapper>
-    <Button>
-      {text}
+    <Button onClick={handleClick}>
+      {children}
       {highlightText && <HighlightText>{highlightText}</HighlightText>}
     </Button>
     <Rectangle
-      color="#00ffff"
-      width="445px"
-      height="37px"
-      left="-20px"
-      top="-20px"
+      color={Cyan}
+      width="90"
+      height="50"
+      left="-20"
+      top="-20"
     />
     <Rectangle
-      color="#00ffff"
-      width="235px"
-      height="8px "
-      left="-100px"
-      top="40px"
+      color={Cyan}
+      width="60"
+      height="15"
+      left="-100"
+      top="40"
     />
     <Rectangle
-      color="#ff00ff"
-      width="279px"
-      height="17px"
-      right="-70px"
-      top="20px"
+      color={Cyan}
+      width="70"
+      height="25"
+      right="-70"
+      top="20"
     />
     <Rectangle
-      color="#ff00ff"
-      width="380px"
-      height="27px"
-      right="-20px"
-      bottom="-20px"
+      color={Cyan}
+      width="85"
+      height="45"
+      right="-20"
+      bottom="-20"
     />
   </ButtonWrapper>
 )

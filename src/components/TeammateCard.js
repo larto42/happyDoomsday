@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {Cyan} from "../Colors"
 
 const Card = styled.div`
   display: flex;
@@ -8,8 +9,8 @@ const Card = styled.div`
 `
 
 const Image = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 20vh;
+  height: 20vh;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
@@ -28,6 +29,7 @@ const Name = styled.h3`
 
 const Position = styled.span`
   font-size: 18px;
+  color: ${Cyan};
 `
 
 export default ({ image, name, position }) => (

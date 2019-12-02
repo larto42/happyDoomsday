@@ -1,30 +1,35 @@
 import React from "react"
 import styled from "styled-components"
 
-const Description = styled.div`
+import GameTitle from './GameTitle'
+import SmallButton from "./SmallButton/SmallButton"
+
+const DescriptionWrapper = styled.div`
   background: black;
   padding: 30px;
   width: 400px;
-  text-align: justify;
-  position: absolute;
-  top: -125%;
-  right: -2%;
-  z-index: 1;
-
-  @media (max-width: 1280px) {
-    font-size: 13px;
-    width: 400px;
-    right: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `
+
+const Description = styled.div `
+  text-align: justify;
+`
+
 const Paragraph = styled.p`
   margin-bottom: 20px;
 `
 
-export default ({ text }) => (
-  <Description>
-    {text.map((paragraph, index) => (
-      <Paragraph key={index}>{paragraph}</Paragraph>
-    ))}
-  </Description>
+export default ({ title, text }) => (
+  <DescriptionWrapper>
+    <GameTitle text={title} />
+    <Description>
+      {text.map((paragraph, index) => (
+        <Paragraph key={index}>{paragraph}</Paragraph>
+      ))}
+    </Description>
+    <SmallButton>Download</SmallButton>
+  </DescriptionWrapper>
 )

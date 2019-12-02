@@ -1,31 +1,30 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import ContainerWrapper from "../ContainerWrapper"
-import Container from "../Container"
-import Content from "../Content"
-import Title from "../Title"
 import Gallery from "../Gallery"
 import ProjectDescription from "../ProjectDescription"
-import SmallButton from "../SmallButton"
 import styled from "styled-components"
+
+const Container = styled.div `
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  column-gap: 30px;
+  align-items:center;
+  padding-top: 17vh;
+`
 
 const DescriptionWrapper = styled.div`
   grid-column: 2;
   position: relative;
 `
 
-export default ({ bgImage, title, galleryImgs, description }) => (
-  <React.Fragment>
-    <ContainerWrapper bgImage={bgImage}>
-      <Container>
-        <Content marginTop="100">
-          <Title text={title} />
-        </Content>
-      </Container>
+export default forwardRef(({ bgImage, title, galleryImgs, description, className }, ref) => (
+  <ContainerWrapper bgImage={bgImage} className={className}>
+    <Container ref={ref}>
       <Gallery images={galleryImgs} />
       <DescriptionWrapper>
-        <ProjectDescription text={description} />
-        <SmallButton text="Download" />
+        <ProjectDescription text={description} title={title}/>
       </DescriptionWrapper>
-    </ContainerWrapper>
-  </React.Fragment>
-)
+    </Container>
+  </ContainerWrapper>
+))
