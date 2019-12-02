@@ -12,6 +12,10 @@ const DescriptionWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media(max-width: 850px) {
+    width: auto;
+  }
 `
 
 const Description = styled.div `
