@@ -75,7 +75,7 @@ export default class index extends Component {
         Use barrels and boxes as obstacles to buy yourself some time. Use combined strenght of both our heroes to lift the cannon and shoot thoes bastards in the face ARGHHH!`,
       ],
       wolfBusters: [
-        `Protect your sheeps from vicious wolves by shooting them with precious cabbage.
+        `Protect your sheep from vicious wolves by shooting them with precious cabbage.
         But be careful not to run over one of your fluffy friends when drifting with your tractor.`,
         `Game can be played by up to 4 players in splitscreen mode.`,
         `Project made for Ludum Dare 43 Game Jam`,

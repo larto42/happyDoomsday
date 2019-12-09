@@ -98,7 +98,7 @@ export default forwardRef(({ bgImage }, ref) => (
           That's why we have also experience in photogrammetry, motion capture and a lot more!
         </DescriptionParagraph>
         <DescriptionParagraph>
-          If you want to join us or get in touch just come to our contact page!
+          If you would like to contact us, ask some questions or just say 'hello' fill the form below!
         </DescriptionParagraph>
       </Description>
     </Container>
