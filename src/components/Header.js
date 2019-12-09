@@ -25,6 +25,10 @@ const HeaderContent = styled.div`
   align-items: center;
   grid-column: 2;
   margin: 20px 0 20px 40px;
+
+  @media(max-width: 850px) {
+    margin: 0;
+  }
 `
 
 const LogoWrapper = styled.div `

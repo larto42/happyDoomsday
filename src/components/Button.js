@@ -16,6 +16,11 @@ const Button = styled.button`
   @media (max-width: 1280px) {
     font-size: 30px;
   }
+
+  @media(max-width: 850px) {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 `
 
 const HighlightText = styled.span`
@@ -41,6 +46,10 @@ const ButtonWrapper = styled.div`
   }
   &:hover ${Button} {
     transform: scale(1.015);
+  }
+
+  @media(max-width: 850px) {
+    margin: 50px 0;
   }
 `
 

@@ -8,6 +8,10 @@ const Menu = styled.ul`
   width: 450px;
   display: flex;
   justify-content: space-between;
+
+  @media(max-width: 850px) {
+    display: none;
+  }
 `
 
 const MenuItem = styled.li`
