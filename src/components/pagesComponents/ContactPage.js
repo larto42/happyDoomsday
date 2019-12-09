@@ -11,9 +11,11 @@ const Container = styled.div`
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    margin: 0 30px;
+    
     @media(max-width: 850px) {
         grid-template-columns: 1fr;
+        margin: 0;
     }
 `
 

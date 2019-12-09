@@ -14,6 +14,8 @@ const Container = styled.div `
 
   @media(max-width: 1220px) {
     padding: 0px 20px;
+    grid-template-columns: 1fr minmax(auto, 400px);
+    width: 100vw;
   }
 
   @media(max-width: 850px) {
