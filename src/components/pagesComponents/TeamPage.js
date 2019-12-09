@@ -13,6 +13,10 @@ const TeamCards = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 15%;
+
+  @media(max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const Container = styled.div `
@@ -21,6 +25,10 @@ const Container = styled.div `
   grid-template-rows: 70px 4fr 3fr;
   padding: 17vh 0 0;
   justify-content: start;
+
+  @media(max-width: 850px) {
+    grid-template-rows: 70px 4fr 1fr;
+  }
 `
 
 const Description = styled.div`
@@ -30,6 +38,13 @@ const Description = styled.div`
 
   @media (max-width: 1280px) {
     margin-left: 50px;
+  }
+
+  @media(max-width: 850px) {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    text-align: justify;
+
   }
 
   /* @media (max-width: 1400px) {

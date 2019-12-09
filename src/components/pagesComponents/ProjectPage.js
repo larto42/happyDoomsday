@@ -18,6 +18,8 @@ const Container = styled.div `
 
   @media(max-width: 850px) {
     grid-template-columns: 1fr;
+    display: block;
+    width: 100vw;
   }
 `
 
