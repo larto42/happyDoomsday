@@ -27,7 +27,7 @@ const Container = styled.div `
   justify-content: start;
 
   @media(max-width: 850px) {
-    grid-template-rows: 70px 4fr 1fr;
+    grid-template-rows: auto;
   }
 `
 
@@ -46,11 +46,6 @@ const Description = styled.div`
     text-align: justify;
 
   }
-
-  /* @media (max-width: 1400px) {
-    width: auto;
-    margin-right: 10%;
-  } */
 `
 
 const DescriptionTitle = styled.h4`
@@ -63,9 +58,7 @@ const DescriptionTitle = styled.h4`
 const DescriptionParagraph = styled.p`
   font-size: 18px;
   margin: 10px 0;
-  /* @media (max-width: 1280px) {
-    font-size: 16px;
-  } */
+  
   @media (max-width: 1400px) {
     font-size: 16px;
     line-height:18px;

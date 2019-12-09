@@ -25,7 +25,7 @@ const FormWrapper = styled.div`
     position: relative;
 
     @media(max-width: 850px) {
-        padding: 0 40px;
+        padding: 0 25px;
     }
 `
 
@@ -37,6 +37,10 @@ const Form = styled.form`
 const Mail = styled.h3 `
     font-size: 2em;
     margin: 5px 0 25px;
+
+    @media(max-width: 850px) {
+        font-size: 1.5em;
+    }
 `
 
 const Input = styled.input `
@@ -85,6 +89,10 @@ const LeftSide = styled.div`
 
 const ContactTitle = styled(Title) `
     align-self: center;
+
+    @media(max-width: 850px) {
+        padding: 15px 60px;
+    }
 `
 
 const Copyright = styled.div `
