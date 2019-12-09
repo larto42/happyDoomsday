@@ -7,11 +7,16 @@ import SmallButton from "./SmallButton/SmallButton"
 const DescriptionWrapper = styled.div`
   background: black;
   padding: 30px;
-  width: 400px;
+  /* width: 400px; */
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media(max-width: 850px) {
+    width: auto;
+  }
 `
 
 const Description = styled.div `

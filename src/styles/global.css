@@ -21,7 +21,9 @@ body, h1, h2, h3, h4, textarea, input {
   scroll-snap-align: start;
 }
 
-/* html, body {
-  height: 100vh;
-  overflow: hidden;
-} */
+@media(max-width: 850px) {
+  #gatsby-focus-wrapper {
+    scroll-snap-type: none;
+    height: auto;
+  }
+}

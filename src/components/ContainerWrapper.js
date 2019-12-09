@@ -19,6 +19,10 @@ const ContainerWrapper = styled.div`
   @media (min-width: 1900px) and (min-height: 1050px) {
     grid-template-columns: 1fr minmax(auto, 1800px) 1fr;
   }
+
+  @media(max-width: 850px) {
+     height: auto;
+  }
 `
 
 export default ({ className, bgImage, children }) => (

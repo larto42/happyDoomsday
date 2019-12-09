@@ -4,6 +4,10 @@ import styled from "styled-components"
 
 const Logo = styled.video`
   width: ${props => props.width};
+
+  @media(max-width: 850px) {
+    max-width: 70vw;
+  }
 `
 
 export default ({ width }) => {

@@ -13,6 +13,10 @@ const TeamCards = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 15%;
+
+  @media(max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const Container = styled.div `
@@ -21,6 +25,10 @@ const Container = styled.div `
   grid-template-rows: 70px 4fr 3fr;
   padding: 17vh 0 0;
   justify-content: start;
+
+  @media(max-width: 850px) {
+    grid-template-rows: auto;
+  }
 `
 
 const Description = styled.div`
@@ -32,10 +40,12 @@ const Description = styled.div`
     margin-left: 50px;
   }
 
-  /* @media (max-width: 1400px) {
-    width: auto;
-    margin-right: 10%;
-  } */
+  @media(max-width: 850px) {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    text-align: justify;
+
+  }
 `
 
 const DescriptionTitle = styled.h4`
@@ -48,9 +58,7 @@ const DescriptionTitle = styled.h4`
 const DescriptionParagraph = styled.p`
   font-size: 18px;
   margin: 10px 0;
-  /* @media (max-width: 1280px) {
-    font-size: 16px;
-  } */
+  
   @media (max-width: 1400px) {
     font-size: 16px;
     line-height:18px;

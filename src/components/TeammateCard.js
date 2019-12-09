@@ -6,6 +6,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media(max-width: 850px) {
+    margin: 25px 0;
+  }
 `
 
 const Image = styled.img`

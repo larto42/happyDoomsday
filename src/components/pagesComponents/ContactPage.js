@@ -11,6 +11,12 @@ const Container = styled.div`
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 0 30px;
+    
+    @media(max-width: 850px) {
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
 `
 
 const FormWrapper = styled.div`
@@ -19,6 +25,10 @@ const FormWrapper = styled.div`
     text-align: right;
     margin-top: 20px;
     position: relative;
+
+    @media(max-width: 850px) {
+        padding: 0 25px;
+    }
 `
 
 const Form = styled.form`
@@ -29,6 +39,10 @@ const Form = styled.form`
 const Mail = styled.h3 `
     font-size: 2em;
     margin: 5px 0 25px;
+
+    @media(max-width: 850px) {
+        font-size: 1.5em;
+    }
 `
 
 const Input = styled.input `
@@ -69,10 +83,23 @@ const LeftSide = styled.div`
     justify-content:space-between;
     align-items: center;
     padding-bottom: 40px;
+
+    @media(max-width: 850px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const ContactTitle = styled(Title) `
     align-self: center;
+
+    @media(max-width: 850px) {
+        padding: 15px 60px;
+    }
+`
+
+const Copyright = styled.div `
+    text-align: center;
+    padding: 20px 0;
 `
 
 class ContactPage extends Component {
@@ -106,8 +133,8 @@ class ContactPage extends Component {
                 message
             }) // body data type must match "Content-Type" header
         });
-        const odp = await response;
-        console.log(odp);
+        const res = await response;
+        console.log(res);
         // const json = await response.json(); // parses JSON response into native JavaScript objects
         // console.log('response', response);
         // console.log(json);
@@ -133,7 +160,6 @@ class ContactPage extends Component {
                 <Container ref={innerRef}>
                     <LeftSide>
                         <ContactTitle>Contact</ContactTitle>
-                        <span>happydoomsday &copy; {new Date().getFullYear()}</span>
                     </LeftSide>
                     <FormWrapper>
                         <p>Feel free to contact us by contact form or e-mail:</p>
@@ -151,6 +177,7 @@ class ContactPage extends Component {
                             </SubmitWrapper>
                         </Form>
                     </FormWrapper>
+                    <Copyright>happydoomsday &copy; {new Date().getFullYear()}</Copyright>
                 </Container>
             </ContainerWrapper>
         )

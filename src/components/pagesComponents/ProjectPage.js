@@ -11,11 +11,30 @@ const Container = styled.div `
   column-gap: 30px;
   align-items:center;
   padding-top: 17vh;
+
+  @media(max-width: 1220px) {
+    padding: 0px 20px;
+    grid-template-columns: 1fr minmax(auto, 400px);
+    width: 100vw;
+  }
+
+  @media(max-width: 850px) {
+    grid-template-columns: 1fr;
+    display: block;
+    width: 100vw;
+  }
 `
 
 const DescriptionWrapper = styled.div`
   grid-column: 2;
   position: relative;
+
+  @media(max-width: 850px) {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
 `
 
 export default forwardRef(({ bgImage, title, galleryImgs, description, className }, ref) => (
